@@ -1046,6 +1046,51 @@ export default function Plugins() {
       );
       break;
     }
+    case PluginCategory.CHALLENGE: {
+      items.push(
+        {
+          name: "url",
+          label: pluginI18n("challengeUrl"),
+          placeholder: pluginI18n("challengeUrlPlaceholder"),
+          defaultValue: pluginConfig.url as string,
+          span: 3,
+          category: ExFormItemCategory.TEXT,
+        },
+        {
+          name: "cookie_name",
+          label: pluginI18n("challengeCookieName"),
+          placeholder: pluginI18n("challengeCookiePlaceholder"),
+          defaultValue: pluginConfig.cookie_name as string,
+          span: 3,
+          category: ExFormItemCategory.TEXT,
+        },
+        {
+          name: "secret",
+          label: pluginI18n("challengeSecret"),
+          placeholder: pluginI18n("challengeSecretPlaceholder"),
+          defaultValue: pluginConfig.secret as string,
+          span: 3,
+          category: ExFormItemCategory.TEXT,
+        },
+        {
+          name: "ttl",
+          label: pluginI18n("challengeTtl"),
+          placeholder: pluginI18n("challengeTtlPlaceholder"),
+          defaultValue: pluginConfig.ttl as string,
+          span: 3,
+          category: ExFormItemCategory.TEXT,
+        },
+        {
+          name: "nonce_ttl",
+          label: pluginI18n("challengeNonceTtl"),
+          placeholder: pluginI18n("challengeNonceTtlPlaceholder"),
+          defaultValue: pluginConfig.nonce_ttl as string,
+          span: 3,
+          category: ExFormItemCategory.TEXT,
+        }
+      );
+      break;
+    }
     default: {
       break;
     }

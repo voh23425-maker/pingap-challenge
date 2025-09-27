@@ -30,6 +30,8 @@ use pingap_certificate::{
     new_certificate_validity_service,
     new_self_signed_certificate_validity_service,
 };
+#[allow(unused_imports)]
+use pingap_challenge::Challenge;
 use pingap_config::PingapConfig;
 use pingap_config::{ConfigManager, ETCD_PROTOCOL};
 use pingap_core::BackgroundTaskService;
@@ -58,7 +60,6 @@ use std::str::FromStr;
 use std::sync::Arc;
 use std::time::Duration;
 use sysinfo::System;
-
 use tracing::{error, info};
 
 mod certificates;

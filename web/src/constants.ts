@@ -15,6 +15,7 @@ export function getPluginSteps(category: string) {
   pluginSupportSteps[PluginCategory.STATS] = [0, 1];
   pluginSupportSteps[PluginCategory.LIMIT] = [0, 1];
   pluginSupportSteps[PluginCategory.COMPRESSION] = [0];
+  pluginSupportSteps[PluginCategory.CHALLENGE] = [0];
   pluginSupportSteps[PluginCategory.ACCEPT_ENCODING] = [0];
   pluginSupportSteps[PluginCategory.ADMIN] = [0];
   pluginSupportSteps[PluginCategory.DIRECTORY] = [0, 1];
@@ -118,6 +119,7 @@ export enum ExFormItemCategory {
 export enum PluginCategory {
   STATS = "stats",
   LIMIT = "limit",
+  CHALLENGE = "challenge",
   COMPRESSION = "compression",
   ACCEPT_ENCODING = "accept_encoding",
   ADMIN = "admin",

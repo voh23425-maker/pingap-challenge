@@ -495,6 +495,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "block-padding"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8894febbff9f758034a5b8e12d87918f56dfc64a8e1fe757d65e29041538d93"
+dependencies = [
+ "generic-array",
+]
+
+[[package]]
 name = "bollard"
 version = "0.19.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -621,6 +630,15 @@ name = "cast"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
+
+[[package]]
+name = "cbc"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "26b52a9543ae338f279b96b0b9fed9c8093744685043739079ce85cd58f289a6"
+dependencies = [
+ "cipher",
+]
 
 [[package]]
 name = "cc"
@@ -2253,6 +2271,7 @@ version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "879f10e63c20629ecabbb64a8010319738c66a5cd0c29b02d63d272b03751d01"
 dependencies = [
+ "block-padding",
  "generic-array",
 ]
 
@@ -2640,6 +2659,16 @@ checksum = "8ea1f30cedd69f0a2954655f7188c6a834246d2bcf1e315e2ac40c4b24dc9519"
 dependencies = [
  "cfg-if",
  "rayon",
+]
+
+[[package]]
+name = "md-5"
+version = "0.10.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d89e7ee0cfbedfc4da3340218492196241d89eefb6dab27de5df917a6d2e78cf"
+dependencies = [
+ "cfg-if",
+ "digest",
 ]
 
 [[package]]
@@ -3356,6 +3385,7 @@ dependencies = [
  "pingap-acme",
  "pingap-cache",
  "pingap-certificate",
+ "pingap-challenge",
  "pingap-config",
  "pingap-core",
  "pingap-imageoptim",
@@ -3478,6 +3508,39 @@ dependencies = [
  "tokio-test",
  "tracing",
  "x509-parser 0.17.0",
+]
+
+[[package]]
+name = "pingap-challenge"
+version = "0.12.0"
+dependencies = [
+ "aes",
+ "async-trait",
+ "base64",
+ "block-padding",
+ "bytes",
+ "cbc",
+ "chrono",
+ "cipher",
+ "cookie",
+ "ctor",
+ "hex",
+ "hmac",
+ "http",
+ "md-5",
+ "pingap-config",
+ "pingap-core",
+ "pingap-plugin",
+ "pingora",
+ "pretty_assertions",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tokio",
+ "tokio-test",
+ "tracing",
+ "urlencoding",
+ "uuid",
 ]
 
 [[package]]

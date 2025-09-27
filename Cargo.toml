@@ -42,6 +42,7 @@ once_cell = { workspace = true }
 pingap-acme = { version = "0.12.0", path = "pingap-acme" }
 pingap-cache = { version = "0.12.0", path = "pingap-cache" }
 pingap-certificate = { version = "0.12.0", path = "pingap-certificate" }
+pingap-challenge = { version = "0.12.0", path = "pingap-challenge" }
 pingap-config = { version = "0.12.0", path = "pingap-config" }
 pingap-core = { version = "0.12.0", path = "pingap-core" }
 pingap-imageoptim = { version = "0.12.0", path = "pingap-imageoptim", optional = true }
@@ -129,6 +130,7 @@ members = [
     "pingap-acme",
     "pingap-cache",
     "pingap-certificate",
+    "pingap-challenge",
     "pingap-config",
     "pingap-core",
     "pingap-discovery",
