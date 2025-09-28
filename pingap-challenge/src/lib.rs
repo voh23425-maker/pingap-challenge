@@ -65,6 +65,7 @@ pub struct Challenge {
     nonce_limit: TtlLruLimit,
     nonce_ttl: Duration,
     secret_hmac: HmacSha256,
+    html_template: String,
 }
 
 impl TryFrom<&PluginConf> for Challenge {
@@ -94,6 +95,10 @@ impl TryFrom<&PluginConf> for Challenge {
         if cookie_name.is_empty() {
             cookie_name = DEFAULT_COOKIE_NAME.to_string();
         }
+        let mut html_template = get_str_conf(conf, "html_template");
+        if html_template.is_empty() {
+            html_template = CHALLENGE_HTML.to_string();
+        }
 
         let nonce_ttl = get_duration_conf(conf, "nonce_ttl")
             .unwrap_or(Duration::from_secs(NONCE_TTL_SECS));
@@ -119,6 +124,7 @@ impl TryFrom<&PluginConf> for Challenge {
                 Duration::from_secs(nonce_ttl.as_secs()),
                 1,
             ),
+            html_template,
         })
     }
 }
@@ -211,7 +217,8 @@ impl Challenge {
         })
         .to_string();
 
-        let html = CHALLENGE_HTML
+        let html = self
+            .html_template
             .replace("__CHALLENGE_CONFIG__", &config_json)
             .replace("__CHALLENGE_JS__", CHALLENGE_FINGERPRINT_JS)
             .replace("__CHALLENGE_CRYPTO_JS__", CHALLENGE_CRYPTO_JS);

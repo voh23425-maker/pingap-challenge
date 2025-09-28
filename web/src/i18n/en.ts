@@ -519,6 +519,8 @@ export default {
     challengeTtlPlaceholder: "Input the ttl for challenge",
     challengeNonceTtl: "Nonce Ttl",
     challengeNonceTtlPlaceholder: "Input the ttl for nonce, default: 10s",
+    challengeHtmlTemplate: "Html Template",
+    challengeHtmlTemplatePlaceholder: "Input the html template for challenge(optional)",
     remark: "Remark",
   },
   storage: {

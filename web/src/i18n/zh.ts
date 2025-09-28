@@ -484,6 +484,8 @@ export default {
     challengeTtlPlaceholder: "输入challenge的有效期",
     challengeNonceTtl: "Nonce有效期",
     challengeNonceTtlPlaceholder: "输入nonce的有效期，默认为10秒",
+    challengeHtmlTemplate: "Html模板",
+    challengeHtmlTemplatePlaceholder: "输入challenge的html模板(可选)",
     remark: "备注",
   },
   storage: {

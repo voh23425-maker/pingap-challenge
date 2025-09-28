@@ -1087,6 +1087,14 @@ export default function Plugins() {
           defaultValue: pluginConfig.nonce_ttl as string,
           span: 3,
           category: ExFormItemCategory.TEXT,
+        },
+        {
+          name: "html_template",
+          label: pluginI18n("challengeHtmlTemplate"),
+          placeholder: pluginI18n("challengeHtmlTemplatePlaceholder"),
+          defaultValue: pluginConfig.html_template as string,
+          span: 6,
+          category: ExFormItemCategory.TEXTAREA,
         }
       );
       break;
